@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'kill $(lsof -t -i:4000)' 
+        sh '<Ctrl> + C' 
         sh 'docker-compose up'
       }
     }     
