@@ -11,6 +11,12 @@ pipeline {
       steps {
         sh 'npm test'
       }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'cd client'
+        sh 'npm run build'
+      }
     }     
   }
 }

@@ -5,7 +5,7 @@ services:
   #   build: ./client
   #   restart: "unless-stopped"
   #   ports:
-  #     - "3000:3000"
+  #     - "4000:4000"
   #   depends_on:
   #     - api-server
   #     - mongo
@@ -16,7 +16,7 @@ services:
     image: server
     build: .
     ports:
-      - "3000:3000"
+      - "4000:4000"
     networks:
       - amotius-app-bridge
     depends_on:
