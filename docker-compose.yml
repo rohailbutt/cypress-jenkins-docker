@@ -16,7 +16,7 @@ services:
     image: server
     build: .
     ports:
-      - "4000:4000"
+      - "3000:3000"
     networks:
       - amotius-app-bridge
     depends_on:
