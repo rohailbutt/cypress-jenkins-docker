@@ -12,25 +12,25 @@ services:
   #   networks:
   #     - amotius-app-bridge
   #   command: "dev"
-  # api-server:
-  #   image: server
-  #   build: .
-  #   ports:
-  #     - "4000:4000"
-  #   networks:
-  #     - amotius-app-bridge
-  #   depends_on:
-  #     - mongo
-  #   command: "start"
-  mongo:
-    image: "mongo"
-    container_name: mongo
+  api-server:
+    image: server
+    build: .
     ports:
-      - 27018:27017
+      - "4000:4000"
     networks:
       - amotius-app-bridge
-    volumes:
-      - mongo-data:/data/db
+    depends_on:
+      - mongo
+    command: "start"
+  # mongo:
+  #   image: "mongo"
+  #   container_name: mongo
+  #   ports:
+  #     - 27018:27017
+  #   networks:
+  #     - amotius-app-bridge
+  #   volumes:
+  #     - mongo-data:/data/db
   # cypress:
   #   image: cypress
   #   build:
@@ -43,9 +43,9 @@ services:
   #   depends_on:
   #     - api-server
   #   command: npx cypress run
-networks:
-  amotius-app-bridge:
-    driver: bridge
-volumes:
-  mongo-data:
-    driver: local
+# networks:
+#   amotius-app-bridge:
+#     driver: bridge
+# volumes:
+#   mongo-data:
+#     driver: local
