@@ -1,17 +1,13 @@
 pipeline {
-    agent any
-    environment {
-            CI = 'true'
-        }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'npm test'
+  agent any
+  tools {nodejs "node14"}
+  stages {
+    stage('Build') {
+      steps {
+        sh 'npm install'
+      }
+      steps {
+            sh 'npm test'
             }
         }
         stage('Deliver') {
@@ -19,6 +15,6 @@ pipeline {
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 }
         }
-
     }
+        
 }
