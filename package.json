@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js && npx cypress run --headless",
+    "start": "node server.js && cypress run",
     "test": "npx cypress run --headless"
   },
   "keywords": [],
