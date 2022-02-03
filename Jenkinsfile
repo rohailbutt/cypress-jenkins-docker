@@ -1,20 +1,20 @@
 pipeline {
   agent any
     
-  tools {nodejs "node"}
+  tools {nodejs "node14"}
     
   stages {
         
     stage('Git') {
       steps {
-        git 'https://github.com/****/****'
+        git 'https://github.com/rohailbutt/cypress-jenkins-docker'
       }
     }
      
     stage('Build') {
       steps {
         sh 'npm install'
-         sh '<<Build Command>>'
+         sh 'npm start'
       }
     }  
     
