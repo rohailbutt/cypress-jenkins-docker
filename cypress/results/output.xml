@@ -1,48 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.0000" tests="3" failures="1">
-  <testsuite name="Root Suite" timestamp="2022-02-03T07:26:39" tests="0" file="cypress/integration/2-advanced-examples/window.spec.js" time="0.0000" failures="0">
+<testsuites name="Mocha Tests" time="0.0100" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-02-03T08:22:42" tests="0" file="cypress/integration/1-getting-started/todo.spec.js" time="0.0000" failures="0">
   </testsuite>
-  <testsuite name="Window" timestamp="2022-02-03T07:26:39" tests="3" time="0.0000" failures="1">
-    <testcase name="Window &quot;before each&quot; hook for &quot;cy.window() - get the global window object&quot;" time="0.0000" classname="&quot;before each&quot; hook for &quot;cy.window() - get the global window object&quot;">
-      <failure message="`cy.visit()` failed trying to load:
-
-http://localhost:8080/commands/window
-
-The response we received from your web server was:
-
-  &gt; 403: Forbidden
-
-This was considered a failure because the status code was not `2xx`.
-
-If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
-
-Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Window`" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
-
-http://localhost:8080/commands/window
-
-The response we received from your web server was:
-
-  > 403: Forbidden
-
-This was considered a failure because the status code was not `2xx`.
-
-If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
-
-Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Window`
-    at http://localhost:3000/__cypress/runner/cypress_runner.js:140455:25
-    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:139830:12)
-    at http://localhost:3000/__cypress/runner/cypress_runner.js:140435:13
-    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:10798:23)
-    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:8733:31)
-    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:8790:18)
-    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:8835:10)
-    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:8911:18)
-    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:5505:12)
-    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:5498:9)
-    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5514:5)
-    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5384:14)
-From Your Spec Code:
-    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/integration/2-advanced-examples/window.spec.js:102:8)]]></failure>
+  <testsuite name="example to-do app" timestamp="2022-02-03T08:22:42" tests="1" time="0.0100" failures="0">
+    <testcase name="example to-do app can delete all completed tasks" time="0.0100" classname="can delete all completed tasks">
     </testcase>
   </testsuite>
 </testsuites>
