@@ -14,9 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'cd client'
-        sh 'npm install'
-        sh 'npm run build'
+        sh 'sudo docker-compose up'
       }
     }     
   }

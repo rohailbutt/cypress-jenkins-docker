@@ -1,17 +1,17 @@
 version: "3.3"
 services:
-  # react-app:
-  #   image: client
-  #   build: ./client
-  #   restart: "unless-stopped"
-  #   ports:
-  #     - "4000:4000"
-  #   depends_on:
-  #     - api-server
-  #     - mongo
-  #   networks:
-  #     - amotius-app-bridge
-  #   command: "dev"
+  react-app:
+    image: client
+    build: ./client
+    restart: "unless-stopped"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api-server
+      - mongo
+    networks:
+      - amotius-app-bridge
+    command: "start"
   api-server:
     image: server
     build: .
@@ -43,9 +43,9 @@ services:
   #   depends_on:
   #     - api-server
   #   command: npx cypress run
-# networks:
-#   amotius-app-bridge:
-#     driver: bridge
+networks:
+  amotius-app-bridge:
+    driver: bridge
 # volumes:
 #   mongo-data:
 #     driver: local
