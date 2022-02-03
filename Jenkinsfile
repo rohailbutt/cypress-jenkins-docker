@@ -14,9 +14,8 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'sudo kill -9 `sudo lsof -t -i:4000`' 
-        sh '123456' 
-        sh 'sudo docker-compose up'
+        sh 'lsof -i:4000`' 
+        sh 'docker-compose up'
       }
     }     
   }
