@@ -6,15 +6,11 @@ pipeline {
       steps {
         sh 'npm install'
       }
-      steps {
-            sh 'npm test'
-            }
-        }
-        stage('Deliver') {
-            steps {            
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                }
-        }
     }
-        
+    stage('Test') {
+      steps {
+        sh 'npm test'
+      }
+    }     
+  }
 }
