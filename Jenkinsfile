@@ -15,7 +15,6 @@ pipeline {
     stage('Deploy') {
       steps {
         sh 'cd client'
-        sh 'npm run build'
       }
     }     
   }
