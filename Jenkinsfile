@@ -6,7 +6,7 @@ pipeline {
       steps {
         sh 'docker --version'
         sh 'docker-compose version'
-        sh 'docker-compose build'
+        sh '/usr/local/bin/docker-compose up -d'
       }
     }
     // stage('Test') {
