@@ -11,11 +11,11 @@ pipeline {
     stage('Test') {
       steps {
         sh 'echo "123456" | sudo -S docker-compose up'
+        sh 'echo "123456" | sudo -S docker-compose down'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'echo "123456" | sudo -S docker-compose down'
         echo 'Deploying.....'
       }
     }     
