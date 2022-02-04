@@ -6,8 +6,7 @@ pipeline {
       steps {
         sh 'docker --version'
         sh 'docker-compose version'
-        sh 'docker images'
-        sh 'docker ps -a'
+        sh 'docker-compose up'
       }
     }
     // stage('Test') {
