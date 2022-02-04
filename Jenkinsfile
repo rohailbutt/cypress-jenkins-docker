@@ -4,14 +4,13 @@ pipeline {
   stages {  
     stage('Build') {
       steps {
-        sh 'npm install'
-        sh 'npm start'
+        sh 'sudo docker-compose up'
+        sh '123456'
       }
     }
     stage('Test') {
       steps {
         sh 'npm test'
-        sh 'pm2 delete all' 
       }
     }
     stage('Deploy') {
