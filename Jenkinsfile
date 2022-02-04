@@ -10,16 +10,16 @@ pipeline {
         sh 'docker --version'
       }
     }
-    stage('Test') {
-      steps {
-        sh 'npm test'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Deploying.....'
-      }
-    }     
+    // stage('Test') {
+    //   steps {
+    //     sh 'npm test'
+    //   }
+    // }
+    // stage('Deploy') {
+    //   steps {
+    //     echo 'Deploying.....'
+    //   }
+    // }     
   }
 }
 
