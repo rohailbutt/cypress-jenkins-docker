@@ -1,17 +1,17 @@
 version: "3.3"
 services:
-  react-app-test:
-    image: client-test
-    build: ./client
-    restart: "unless-stopped"
-    ports:
-      - "3000:3000"
-    depends_on:
-      - api-server-test
-      # - mongo
-    networks:
-      - amotius-app-bridge-test
-    command: "start"
+  # react-app-test:
+  #   image: client-test
+  #   build: ./client
+  #   restart: "unless-stopped"
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - api-server-test
+  #     # - mongo
+  #   networks:
+  #     - amotius-app-bridge-test
+  #   command: "start"
   api-server-test:
     image: server-test
     build: .
