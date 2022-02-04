@@ -12,11 +12,17 @@ pipeline {
         sh 'npm test'
       }
     }
+    post {
+    always {
+      echo ‘I will always execute this!’
+      sh 'pm2 delete all'
+    }
+  }
     stage('Deploy') {
       steps {
-        sh '<Ctrl> + C' 
-        sh 'docker-compose up'
+        echo ‘I will always execute this!’
       }
     }     
   }
 }
+
