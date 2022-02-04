@@ -8,7 +8,7 @@ pipeline {
         // sh 'usermod -aG docker $USER'
         // sh 'newgrp docker'
         sh 'docker --version'
-        sh 'docker compose version'
+        sh 'docker-compose version'
       }
     }
     // stage('Test') {
