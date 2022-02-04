@@ -11,11 +11,12 @@ pipeline {
     stage('Test') {
       steps {
         sh 'npm test'
+        sh 'pm2 delete all' 
       }
     }
     stage('Deploy') {
       steps {
-        sh 'pm2 delete all' 
+        echo 'Deploying.....'
       }
     }     
   }
