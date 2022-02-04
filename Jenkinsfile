@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'docker-compose down'
+        sh 'pm2 delete all'
         echo 'Deploying.....'
       }
     }     
