@@ -10,16 +10,17 @@ pipeline {
         sh 'echo "123456" | sudo -S docker-compose up'
       }
     }
-    // stage('Test') {
-    //   steps {
-    //     sh 'npm test'
-    //   }
-    // }
-    // stage('Deploy') {
-    //   steps {
-    //     echo 'Deploying.....'
-    //   }
-    // }     
+    stage('Test') {
+      steps {
+        sh 'npm test'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'docker-compose down'
+        echo 'Deploying.....'
+      }
+    }     
   }
 }
 
