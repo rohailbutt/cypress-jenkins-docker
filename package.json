@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "pm2 start server.js",
+    "kill-server": "pm2 delete all",
     "test": "npx cypress run --headless"
   },
   "keywords": [],
