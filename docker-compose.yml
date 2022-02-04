@@ -31,18 +31,18 @@ services:
   #     - amotius-app-bridge
   #   volumes:
   #     - mongo-data:/data/db
-  # cypress:
-  #   image: cypress
-  #   build:
-  #     context: ./
-  #     dockerfile: ./Dockerfile.cypress
-  #   environment:
-  #     - CYPRESS_baseUrl=http://api-server:4000/api/
-  #   networks:
-  #     - amotius-app-bridge
-  #   depends_on:
-  #     - api-server
-  #   command: npx cypress run
+  cypress:
+    image: cypress-test
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.cypress
+    environment:
+      - CYPRESS_baseUrl=http://api-server-test:4000/api/
+    networks:
+      - amotius-app-bridge-test
+    depends_on:
+      - api-server-test
+    command: npx cypress run
 networks:
   amotius-app-bridge-test:
     driver: bridge

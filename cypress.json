@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://api-server-test:4001",
+  "baseUrl": "http://api-server-test:4000",
   "reporter": "junit",
   "reporterOptions": {
     "mochaFile": "cypress/results/output.xml"
