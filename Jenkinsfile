@@ -4,11 +4,10 @@ pipeline {
   stages {  
     stage('Build') {
       steps {
-        // sh 'groupadd docker'
-        // sh 'usermod -aG docker $USER'
-        // sh 'newgrp docker'
         sh 'docker --version'
         sh 'docker-compose version'
+        sh 'docker images'
+        sh 'docker ps -a'
       }
     }
     // stage('Test') {
