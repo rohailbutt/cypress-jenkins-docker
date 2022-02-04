@@ -12,14 +12,9 @@ pipeline {
         sh 'npm test'
       }
     }
-    post {
-    always {
-      sh 'pm2 delete all'
-    }
-  }
     stage('Deploy') {
       steps {
-        echo 'asdasdasd'
+        sh 'pm2 delete all' 
       }
     }     
   }
