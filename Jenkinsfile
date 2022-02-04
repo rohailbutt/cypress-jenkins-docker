@@ -5,7 +5,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
-        sh 'pm2 node server.js'
+        sh 'npm start'
       }
     }
     stage('Test') {
