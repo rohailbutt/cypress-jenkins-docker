@@ -4,9 +4,9 @@ pipeline {
   stages {  
     stage('Build') {
       steps {
-        sh 'sudo groupadd docker'
-        sh 'sudo usermod -aG docker $USER'
-        sh 'newgrp docker'
+        // sh 'groupadd docker'
+        // sh 'usermod -aG docker $USER'
+        // sh 'newgrp docker'
         sh 'docker-compose up'
       }
     }
