@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "pm2 nodemon server.js",
+    "start": "pm2 start server.js",
     "test": "npx cypress run --headless"
   },
   "keywords": [],
