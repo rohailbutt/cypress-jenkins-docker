@@ -7,7 +7,7 @@ pipeline {
         // sh 'groupadd docker'
         // sh 'usermod -aG docker $USER'
         // sh 'newgrp docker'
-        sh 'docker-compose up'
+        sh 'docker --version'
       }
     }
     stage('Test') {
