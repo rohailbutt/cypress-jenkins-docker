@@ -14,13 +14,12 @@ pipeline {
     }
     post {
     always {
-      echo ‘I will always execute this!’
       sh 'pm2 delete all'
     }
   }
     stage('Deploy') {
       steps {
-        echo ‘I will always execute this!’
+        echo 'asdasdasd'
       }
     }     
   }
