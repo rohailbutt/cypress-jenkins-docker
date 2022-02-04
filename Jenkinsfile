@@ -6,7 +6,7 @@ pipeline {
       steps {
         sh 'docker --version'
         sh 'docker-compose version'
-        sh '$echo 123456 | sudo -S docker images'
+        sh 'echo "123456" | sudo -S docker images'
       }
     }
     // stage('Test') {
