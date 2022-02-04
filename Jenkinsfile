@@ -4,6 +4,7 @@ pipeline {
   stages {  
     stage('Build') {
       steps {
+        sh 'newgrp docker'
         sh 'docker-compose up'
       }
     }
