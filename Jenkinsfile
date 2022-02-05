@@ -4,19 +4,25 @@ pipeline {
   stages {  
     stage('Build') {
       steps {
-        sh 'docker --version'
-        sh 'docker-compose version'
+        sh 'npm install'
+        sh 'npm start'
       }
     }
     stage('Test') {
       steps {
-        sh 'echo "123456" | sudo -S docker-compose up'
+        sh 'npm test'
+        sh 'pm2 delete all'
       }
-    }   
+    }
+    stage('Deploy') {
+      steps {
+        sh 'deploying.....'
+      }
+    }    
   }
   post {
     success {
-      sh 'echo "123456" | sudo -S docker-compose down'
+      sh 'deployed'
     }
   }
 }
