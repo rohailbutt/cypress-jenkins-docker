@@ -6,7 +6,7 @@
   "scripts": {
     "start": "pm2 start server.js",
     "kill-server": "pm2 delete all",
-    "test": "npx cypress run --headless"
+    "test": "NO_COLOR=1 cypress run --headless"
   },
   "keywords": [],
   "author": "",

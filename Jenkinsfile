@@ -22,8 +22,8 @@ pipeline {
     }    
   }
   post {
-    success {
-      echo 'deployed'
+    always {
+        junit 'results/cypress-report.xml'
     }
   }
 }
