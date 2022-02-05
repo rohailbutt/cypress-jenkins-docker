@@ -16,13 +16,13 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'deploying.....'
+        echo 'deploying.....'
       }
     }    
   }
   post {
     success {
-      sh 'deployed'
+      echo 'deployed'
     }
   }
 }
