@@ -1,5 +1,8 @@
 describe("example to-do app", () => {
-  it.only("it should get the logged in user", () => {
+  it("it should get the logged in userq", () => {});
+  it("it should get the logged in userq]d", () => {});
+  it("it should get the logged in userf", () => {});
+  it("it should get the logged in user", () => {
     cy.request({
       method: "POST",
       url: "auth/login",
