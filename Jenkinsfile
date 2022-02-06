@@ -6,12 +6,14 @@ pipeline {
       steps {
         sh 'npm install'
         sh 'npm start'
+        echo "During Build currentResult: ${currentBuild.currentResult}"
       }
     }
     stage('Test') {
       steps {
         sh 'npm test'
         sh 'pm2 delete all'
+        echo "During Build currentResult: ${currentBuild.currentResult}"
       }
     }
     stage('Deploy') {

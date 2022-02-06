@@ -1,29 +1,31 @@
 version: "3.3"
 services:
-  # react-app-test:
-  #   image: client-test
-  #   build: ./client
-  #   restart: "unless-stopped"
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - api-server-test
-  #     # - mongo
-  #   networks:
-  #     - amotius-app-bridge-test
-  #   command: "start"
-  # api-server-test:
-  #   image: server-test
-  #   build: .
-  #   ports:
-  #     - "4000:4000"
-  #   networks:
-  #     - amotius-app-bridge-test
-  #   depends_on:
-  #     - mongo
+  react-app-test:
+    image: client-test
+    build: ./client
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api-server-test
+      # - mongo
+    networks:
+      - amotius-app-bridge-test
+    command: "start"
+  api-server-test:
+    image: server-test
+    build: .
+    restart: always
+    ports:
+      - "4000:4000"
+    networks:
+      - amotius-app-bridge-test
+    depends_on:
+      - mongo
   mongo:
     image: "mongo"
     container_name: mongo
+    restart: always
     ports:
       - 27017:27017
     networks:
@@ -45,6 +47,6 @@ services:
 networks:
   amotius-app-bridge-test:
     driver: bridge
-# volumes:
-#   mongo-data:
-#     driver: local
+volumes:
+  mongo-data:
+    driver: local
