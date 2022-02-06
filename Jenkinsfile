@@ -15,6 +15,11 @@ pipeline {
         sh 'pm2 delete all'
         echo "During Build currentResult: ${currentBuild.currentResult}"
       }
+      post {
+        always {
+          echo "During Build currentResult: ${currentBuild.currentResult}"
+      }
+  }
     }
     stage('Deploy') {
       steps {
@@ -22,11 +27,6 @@ pipeline {
         // sh 'echo "123456" | sudo -S docker-compose up --build'
       }
     }    
-  }
-  post {
-    always {
-        junit 'results/cypress-report.xml'
-    }
   }
 }
 
