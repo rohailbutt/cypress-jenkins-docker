@@ -25,7 +25,7 @@ pipeline {
           //  sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && mkdir /home/ubuntu/app/test-jenkins-pipline'
           //  echo 'deploying...........'
         script {
-           sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 'bash -s' <<'ENDSSH' '
+           sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && pwd 'bash -s' <<'ENDSSH' '
         }
           
       
