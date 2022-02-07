@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'echo "yes" | ssh -t -t ubuntu@3.26.235.60'
+        sh 'ssh -o StrictHostKeyChecking=no -t -t ubuntu@3.26.235.60'
         echo 'deploying...........'
         // sh 'echo "123456" | sudo -S docker-compose up --build'
       }
