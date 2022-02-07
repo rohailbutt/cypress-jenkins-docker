@@ -23,8 +23,7 @@ pipeline {
     stage('Deploy') {
       steps {
         script {
-           sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -t -t ubuntu@3.26.235.60'
-           sh 'mkdir /home/ubuntu/app/test-jenkins-pipline'
+           sh 'ssh -tt ubuntu@3.26.235.60 && mkdir /home/ubuntu/app/jenkins-file-1'
            echo 'deploying...........'
         }
         
