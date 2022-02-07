@@ -22,8 +22,14 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-           sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && mkdir /home/ubuntu/app/test-jenkins-pipline'
-           echo 'deploying...........'
+          //  sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && mkdir /home/ubuntu/app/test-jenkins-pipline'
+          //  echo 'deploying...........'
+
+          sh '''#!/bin/bash
+             echo "===> in bash script now"
+             ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && mkdir /home/ubuntu/app/test-jenkins-pipline
+             ls
+             pwd'''
       
         
         // sh 'echo "123456" | sudo -S docker-compose up --build'
