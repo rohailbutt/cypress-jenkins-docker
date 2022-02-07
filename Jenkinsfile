@@ -22,10 +22,9 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        script {
            sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && mkdir /home/ubuntu/app/test-jenkins-pipline'
            echo 'deploying...........'
-        }
+      
         
         // sh 'echo "123456" | sudo -S docker-compose up --build'
         // -o StrictHostKeyChecking=no 
