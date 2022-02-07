@@ -23,7 +23,7 @@ pipeline {
     stage('Deploy') {
       steps {
         script {
-           sh 'ssh -i ~/.ssh/id_rsa.pub ubuntu@3.26.235.60'
+           sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -t -t ubuntu@3.26.235.60'
            echo 'deploying...........'
         }
         
