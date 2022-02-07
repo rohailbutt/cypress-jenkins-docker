@@ -24,6 +24,7 @@ pipeline {
       steps {
         script {
            sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -t -t ubuntu@3.26.235.60'
+           sh 'mkdir /home/ubuntu/app/test-jenkins-pipline'
            echo 'deploying...........'
         }
         
