@@ -26,8 +26,9 @@ pipeline {
           //  echo 'deploying...........'
         script {
            sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 'bash -s' <<'ENDSSH' '
-           sh 'pwd'
-           sh 'mkdir /home/ubuntu/app/test'
+           echo 'deploying...........'
+           echo 'deploying...........'
+           echo 'deploying//////'
         }
           
       
