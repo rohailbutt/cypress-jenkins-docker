@@ -24,7 +24,7 @@ pipeline {
       steps {
           sh 'git checkout main'
           sh 'git pull origin staging'
-          sh 'git push https://rohailbutt:v4nquish911@github.com/cypress-jenkins-docker'
+          sh 'git push https://rohailbutt:v4nquish911@github.com/rohailbutt/cypress-jenkins-docker'
         // sh 'echo "123456" | sudo -S docker-compose up --build'
         // -o StrictHostKeyChecking=no 
       }
