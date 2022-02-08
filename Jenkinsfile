@@ -22,8 +22,6 @@ pipeline {
     }
     stage('Push code to master') {
       steps {
-          sh 'git add .'
-          sh 'git commit -m 'pushed''
           sh 'git checkout main'
           sh 'git pull origin staging'
         // sh 'echo "123456" | sudo -S docker-compose up --build'
