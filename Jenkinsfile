@@ -26,6 +26,7 @@ pipeline {
           sh 'git config --global user.name "Rohail Butt"'
           sh 'git checkout main'
           sh 'git pull origin staging'
+          sh 'git push origin main'
         // sh 'echo "123456" | sudo -S docker-compose up --build'
         // -o StrictHostKeyChecking=no 
       }
