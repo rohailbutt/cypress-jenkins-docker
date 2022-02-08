@@ -24,9 +24,10 @@ pipeline {
       steps {
           sh 'git checkout main'
           sh 'git pull origin staging'
-          withCredentials([gitUsernamePassword(credentialsId: 'b7d1acda-dcb8-45cc-8a47-7254cf689e73', gitToolName: 'git-tool')]) {
-            powershell 'git push origin main'
-          }
+          sh 'git push origin staging'
+          // withCredentials([gitUsernamePassword(credentialsId: 'b7d1acda-dcb8-45cc-8a47-7254cf689e73', gitToolName: 'git-tool')]) {
+          //   powershell 'git push origin main'
+          // }
         // https://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@github.com/rohailbutt/cypress-jenkins-docker
         // sh 'echo "123456" | sudo -S docker-compose up --build'
         // -o StrictHostKeyChecking=no 
