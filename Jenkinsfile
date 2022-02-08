@@ -22,6 +22,8 @@ pipeline {
     }
     stage('Push code to master') {
       steps {
+          sh 'git config --global user.email "rohailkinectro@gmail.com"'
+          sh 'git config --global user.name "Rohail Butt"'
           sh 'git checkout main'
           sh 'git pull origin staging'
         // sh 'echo "123456" | sudo -S docker-compose up --build'
