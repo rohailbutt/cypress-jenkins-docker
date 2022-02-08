@@ -20,13 +20,14 @@ pipeline {
         echo "During Build currentResult: ${currentBuild.currentResult}"
       }
     }
-    stage('Remote SSH') {
+    stage('Push code to master') {
       steps {
+          'git push origin main'
           //  sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && mkdir /home/ubuntu/app/test-jenkins-pipline'
           //  echo 'deploying...........'
-        script {
-           sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && ls && pwd 'bash -s' <<'ENDSSH' '
-        }        
+        // script {
+        //    sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && ls && pwd 'bash -s' <<'ENDSSH' '
+        // }        
         // sh 'echo "123456" | sudo -S docker-compose up --build'
         // -o StrictHostKeyChecking=no 
       }
