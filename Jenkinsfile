@@ -22,11 +22,9 @@ pipeline {
     }
     stage('Push code to master') {
       steps {
-          sh 'git config --global user.email "rohailkinectro@gmail.com"'
-          sh 'git config --global user.name "Rohail Butt"'
           sh 'git checkout main'
           sh 'git pull origin staging'
-          sh 'git push origin main'
+          sh 'git push https://rohailbutt:v4nquish911@github.com/cypress-jenkins-docker'
         // sh 'echo "123456" | sudo -S docker-compose up --build'
         // -o StrictHostKeyChecking=no 
       }
