@@ -25,7 +25,7 @@ pipeline {
           sh 'git checkout main'
           sh 'git pull origin staging'
           sh 'git remote set-url origin https://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@github.com/rohailbutt/cypress-jenkins-docker'
-          // sh 'git push https://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@github.com/rohailbutt/cypress-jenkins-docker'
+          sh 'git push https://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@github.com/rohailbutt/cypress-jenkins-docker'
         // sh 'echo "123456" | sudo -S docker-compose up --build'
         // -o StrictHostKeyChecking=no 
       }
