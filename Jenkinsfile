@@ -22,12 +22,10 @@ pipeline {
     }
     stage('Push code to master') {
       steps {
+          sh 'git add .'
+          sh 'git commit -m 'pushed''
           sh 'git checkout main'
-          //  sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && mkdir /home/ubuntu/app/test-jenkins-pipline'
-          //  echo 'deploying...........'
-        // script {
-        //    sh 'ssh -i /home/kinectro/Downloads/amotius-statging-server.pem -tt ubuntu@3.26.235.60 && ls && pwd 'bash -s' <<'ENDSSH' '
-        // }        
+          sh 'git pull origin staging'
         // sh 'echo "123456" | sudo -S docker-compose up --build'
         // -o StrictHostKeyChecking=no 
       }
