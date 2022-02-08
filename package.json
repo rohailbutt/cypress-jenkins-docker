@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "npx cypress run --headless"
+    "start": "pm2 start server.js",
+    "kill-server": "pm2 delete all",
+    "test": "NO_COLOR=1 cypress run --headless"
   },
   "keywords": [],
   "author": "",

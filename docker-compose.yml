@@ -1,51 +1,52 @@
 version: "3.3"
 services:
-  # react-app:
-  #   image: client
-  #   build: ./client
-  #   restart: "unless-stopped"
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - api-server
-  #     - mongo
-  #   networks:
-  #     - amotius-app-bridge
-  #   command: "dev"
-  api-server:
-    image: server
-    build: .
+  react-app-test:
+    image: client-test
+    build: ./client
+    restart: always
     ports:
       - "3000:3000"
+    depends_on:
+      - api-server-test
+      # - mongo
     networks:
-      - amotius-app-bridge
+      - amotius-app-bridge-test
+    command: "start"
+  api-server-test:
+    image: server-test
+    build: .
+    restart: always
+    ports:
+      - "4000:4000"
+    networks:
+      - amotius-app-bridge-test
     depends_on:
       - mongo
-    command: "start"
-  # mongo:
-  #   image: "mongo"
-  #   container_name: mongo
-  #   ports:
-  #     - 27018:27017
-  #   networks:
-  #     - amotius-app-bridge
-  #   volumes:
-  #     - mongo-data:/data/db
+  mongo:
+    image: "mongo"
+    container_name: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    networks:
+      - amotius-app-bridge-test
+    volumes:
+      - mongo-data:/data/db
   # cypress:
-  #   image: cypress
+  #   image: cypress-test
   #   build:
   #     context: ./
   #     dockerfile: ./Dockerfile.cypress
   #   environment:
-  #     - CYPRESS_baseUrl=http://api-server:4000/api/
+  #     - CYPRESS_baseUrl=http://api-server-test:4000
   #   networks:
-  #     - amotius-app-bridge
+  #     - amotius-app-bridge-test
   #   depends_on:
-  #     - api-server
+  #     - api-server-test
   #   command: npx cypress run
-# networks:
-#   amotius-app-bridge:
-#     driver: bridge
-# volumes:
-#   mongo-data:
-#     driver: local
+networks:
+  amotius-app-bridge-test:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
